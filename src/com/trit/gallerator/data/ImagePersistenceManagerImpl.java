@@ -18,9 +18,10 @@ public class ImagePersistenceManagerImpl implements ImagePersistenceManager {
 	 */
 	@Override
 	public long storeImageData(ImageData imageData) {
-		PersistenceManager pm = PMF.get().getPersistenceManager();
+	/*	PersistenceManager pm = PMF.get().getPersistenceManager();
 		pm.makePersistent(imageData);
-		return imageData.getId();
+		return imageData.getId();*/
+		return -1; // TODO
 	}
 
 }

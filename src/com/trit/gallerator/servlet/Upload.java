@@ -39,7 +39,6 @@ public class Upload extends HttpServlet {
         ImageData image = new ImageData();
         image.setServingUrl(imageServingUrl);
         galleryInstance.getImages().add(image);
-        
         PMF.get().getPersistenceManager().makePersistent(galleryInstance);
         
         
