@@ -4,7 +4,7 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;
 
 /**
- * Helper for persistenceManagerFactory
+ * Helper for persistenceManagerFactory, creates a singleton
  * 
  * @author Amund
  * 

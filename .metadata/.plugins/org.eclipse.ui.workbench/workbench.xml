@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="43" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="50" y="28">
 <fastViewData fastViewLocation="1024"/>
@@ -16,7 +16,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
@@ -40,6 +40,12 @@
 <part id="2"/>
 <part id="3"/>
 <part id="4"/>
+<part id="5"/>
+<part id="6"/>
+<part id="7"/>
+<part id="8"/>
+<part id="9"/>
+<part id="10"/>
 </presentation>
 </folder>
 </info>
@@ -48,27 +54,54 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/conf/application.conf"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="990" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.wst.html.core.htmlsource.source" name="main.html" partName="main.html" path="E:/Documents/Gallerator2/app/views/main.html" title="main.html" tooltip="Gallerator/app/views/main.html" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="main.html" partName="main.html" path="E:/Documents/Gallerator2/app/views/main.html" title="main.html" tooltip="Gallerator/app/views/main.html" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/app/views/main.html"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="417" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="16" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.wst.html.core.htmlsource.source" name="index.html" partName="index.html" path="E:/Documents/Gallerator2/app/views/Application/index.html" title="index.html" tooltip="Gallerator/app/views/Application/index.html" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/app/views/Application/index.html"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="53" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="102" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="E:/Documents/Gallerator2/app/controllers/Application.java" title="Application.java" tooltip="Gallerator/app/controllers/Application.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Application.java" partName="Application.java" path="E:/Documents/Gallerator2/app/controllers/Application.java" title="Application.java" tooltip="Gallerator/app/controllers/Application.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/app/controllers/Application.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="5" selectionOffset="166" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="180" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.wst.css.core.csssource.source" name="main.css" partName="main.css" path="E:/Documents/Gallerator2/public/stylesheets/main.css" title="main.css" tooltip="Gallerator/public/stylesheets/main.css" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/public/stylesheets/main.css"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationTest.java" partName="ApplicationTest.java" path="E:/Documents/Gallerator2/test/ApplicationTest.java" title="ApplicationTest.java" tooltip="Gallerator/test/ApplicationTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/test/ApplicationTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BasicTest.java" partName="BasicTest.java" path="E:/Documents/Gallerator2/test/BasicTest.java" title="BasicTest.java" tooltip="Gallerator/test/BasicTest.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/test/BasicTest.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="Application.test.html" partName="Application.test.html" path="E:/Documents/Gallerator2/test/Application.test.html" title="Application.test.html" tooltip="Gallerator/test/Application.test.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/test/Application.test.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.ui.DefaultTextEditor" name="data.yml" partName="data.yml" path="E:/Documents/Gallerator2/test/data.yml" title="data.yml" tooltip="Gallerator/test/data.yml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/test/data.yml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="toplogo.html" partName="toplogo.html" path="E:/Documents/Gallerator2/app/views/toplogo.html" title="toplogo.html" tooltip="Gallerator/app/views/toplogo.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/app/views/toplogo.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="23" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="UploadForm.html" partName="UploadForm.html" path="E:/Documents/Gallerator2/app/views/UploadForm.html" title="UploadForm.html" tooltip="Gallerator/app/views/UploadForm.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Gallerator/app/views/UploadForm.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="30" selectionTopPixel="0"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<expanded>
+<category IMemento.internal.id="Errors"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="0" org.eclipse.ui.ide.markerType="0" org.eclipse.ui.ide.pathField="0" org.eclipse.ui.ide.resourceField="0" org.eclipse.ui.ide.severityAndDescriptionField="0"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -115,7 +148,7 @@
 <view id="org.eclipse.jdt.ui.SourceView" partName="Declaration"/>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.wst.html.core.htmlsource.source" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -217,7 +250,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="250" ratioRight="750" relationship="2" relative="left"/>
+<info part="org.eclipse.ui.editorss" ratio="0.21648836" ratioLeft="344" ratioRight="1245" relationship="2" relative="left"/>
 <info folder="true" part="bottom" ratio="0.7496136" ratioLeft="485" ratioRight="162" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -258,6 +291,15 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Gallerator/app/views/Application/index.html"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gallerator/app/controllers/Application.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" path="/Gallerator/public/stylesheets/main.css"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gallerator/test/ApplicationTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gallerator/test/BasicTest.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Gallerator/test/Application.test.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Gallerator/test/data.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Gallerator/app/controllers/Application.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Gallerator/app/views/Application/index.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Gallerator/app/views/toplogo.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/Gallerator/app/views/UploadForm.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Gallerator/conf/application.conf"/>
 </editors>
 <item historyLabel="application.conf" index="0">
 <position info="not_deleted" x="990" y="0"/>
@@ -283,8 +325,92 @@
 <item historyLabel="index.html" index="2">
 <position info="not_deleted" x="48" y="0"/>
 </item>
-<item active="true" historyLabel="main.html" index="1">
+<item historyLabel="main.html" index="1">
 <position info="not_deleted" x="394" y="19"/>
+</item>
+<item historyLabel="ApplicationTest.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="BasicTest.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Application.test.html" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="data.yml" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Application.test.html" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="data.yml" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="163" y="5"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="605" y="0"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="605" y="0"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="163" y="5"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="605" y="0"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="toplogo.html" index="11">
+<position info="not_deleted" x="23" y="0"/>
+</item>
+<item historyLabel="UploadForm.html" index="12">
+<position info="not_deleted" x="0" y="499"/>
+</item>
+<item historyLabel="index.html" index="10">
+<position/>
+</item>
+<item historyLabel="UploadForm.html" index="12">
+<position/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="605" y="0"/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="511" y="0"/>
+</item>
+<item historyLabel="UploadForm.html" index="12">
+<position info="not_deleted" x="30" y="0"/>
+</item>
+<item historyLabel="main.html" index="1">
+<position info="not_deleted" x="16" y="0"/>
+</item>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="163" y="5"/>
+</item>
+<item historyLabel="Application.java" index="9">
+<position info="not_deleted" x="216" y="23"/>
+</item>
+<item historyLabel="application.conf" index="13">
+<position info="not_deleted" x="990" y="0"/>
+</item>
+<item active="true" historyLabel="Application.java" index="9">
+<position info="not_deleted" x="56" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -303,6 +429,24 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="UploadForm.html" tooltip="Gallerator/app/views/UploadForm.html">
+<persistable path="/Gallerator/app/views/UploadForm.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="toplogo.html" tooltip="Gallerator/app/views/toplogo.html">
+<persistable path="/Gallerator/app/views/toplogo.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="data.yml" tooltip="Gallerator/test/data.yml">
+<persistable path="/Gallerator/test/data.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="Application.test.html" tooltip="Gallerator/test/Application.test.html">
+<persistable path="/Gallerator/test/Application.test.html"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BasicTest.java" tooltip="Gallerator/test/BasicTest.java">
+<persistable path="/Gallerator/test/BasicTest.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationTest.java" tooltip="Gallerator/test/ApplicationTest.java">
+<persistable path="/Gallerator/test/ApplicationTest.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="favicon.png" tooltip="Gallerator/public/images/favicon.png">
 <persistable path="/Gallerator/public/images/favicon.png"/>
 </file>

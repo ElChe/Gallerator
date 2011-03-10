@@ -1,0 +1,3 @@
+#{extends 'main.html' /}
+#{set title:'Gallerator' /}
+<div>hello is it me youre looking for?</div>

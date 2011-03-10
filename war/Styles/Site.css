@@ -1,4 +1,4 @@
-﻿/* DEFAULTS
+/* DEFAULTS
 ----------------------------------------------------------*/
 
 body   
@@ -300,16 +300,10 @@ div.accountInfo
 
 .import-upload
 {
-    float: left;
-    width: 45%;
 }
 .import-separator
 {
-    float: left;
-    width: 3%;
 }
 .import-metadata
 {
-    float: left; 
-    width: 45%;
 }

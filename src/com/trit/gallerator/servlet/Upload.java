@@ -40,7 +40,7 @@ public class Upload extends HttpServlet {
         image.setServingUrl(imageServingUrl);
         galleryInstance.getImages().add(image);
         PMF.get().getPersistenceManager().makePersistent(galleryInstance);
-        
+
         
         /*if (blobKey == null) {
             res.sendRedirect("/index.jsp");

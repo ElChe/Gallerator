@@ -8,7 +8,6 @@
 <%
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -38,18 +37,17 @@
 							name="myFile"> <input type="submit" value="Submit">
 					</form>
 				</div>
-				<div class="import-separator">
-					<span>or...</span>
-				</div>
-				<div class="import-metadata"></div>
 			</div>
 			<!-- change this to bind the onchange in jquery -->
-			<select id="gallerySelector">
-				<option title="Choose one..." value="0" selected="selected">Choose
-					one gallery...</option>
-				<option title="Galleria" value="1">Galleria</option>
-				<option title="Sliding gallery" value="2">Sliding gallery</option>
-			</select>
+			<div>
+				<label for="gallerySelector">Choose a gallery to use:&nbsp;</label>
+				<select id="gallerySelector">
+					<option title="Choose one..." value="0" selected="selected">Choose
+						one gallery...</option>
+					<option title="Galleria" value="1">Galleria</option>
+					<option title="Sliding gallery" value="2">Sliding gallery</option>
+				</select>
+			</div>
 			<div id="images" style="display: none;" class="">
 				<img alt="" class="originals"
 					src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Basket_of_strawberries_red_accent.jpg/500px-Basket_of_strawberries_red_accent.jpg" />
@@ -96,12 +94,22 @@
             	// prepare Options Object 
             	var options = {  
             	    success:    function() { 
-            	        alert('Thanks for your comment!'); 
+            	    	GetImages(); 
             	    } 
             	}; 
             	$('#uploadForm').ajaxForm(options);
             }
 
+			function GetImages(){
+				$.getJSON("images",
+						  function(data) {
+						    $.each(data.items, function(i,item){
+						      $("<img/>").attr("src", item.media.m).appendTo("#images");
+						      if ( i == 3 ) return false;
+						    });
+						  });
+
+				}
 
             // Loads correct gallery and populates it with images from #images div
             function ChooseGallery() {
@@ -118,11 +126,13 @@
                     images.show();
                 }
                 if (selectedGallery == "2") {
+                	images.show();
                     $('#imageView img:first').addClass('start');
                     $('#imageView img').slidingGallery({
                         container: $('div#imageView'),
                         Lshrink: function (dimension) { return dimension * 0.3; }
                     });
+                    
                 }
             }
 
