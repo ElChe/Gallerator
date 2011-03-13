@@ -32,7 +32,7 @@ public class GalleryInstance {
 	 * @return
 	 */
 	public String GetEditReference(){
-		return "instanceId="+getKey();
+		return getKey().getName();
 	}
 
 	/**

@@ -25,6 +25,7 @@
 		// Create a new GalleryInstance, and get the Key
 		galleryInstance = galleryService.createNewGalleryInstance(request);
 	}
+	request.getSession().setAttribute(RequestHelper.EditReference, galleryInstance.GetEditReference());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
