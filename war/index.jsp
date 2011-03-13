@@ -1,3 +1,6 @@
+<%@page import="com.trit.gallerator.data.GalleryInstance"%>
+<%@page import="com.trit.gallerator.services.GalleryServiceImpl"%>
+<%@page import="com.trit.gallerator.web.utils.RequestHelper"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -6,7 +9,22 @@
 <%@ page import="com.google.appengine.api.blobstore.BlobstoreService"%>
 
 <%
-    BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+    final BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+	
+ 	// TODO put this somewhere else, and send request as input
+ 	// TODO security
+ 	// TODO Session handling/user
+	GalleryServiceImpl galleryService = new GalleryServiceImpl();
+	GalleryInstance galleryInstance;
+	String editReference = request.getParameter(RequestHelper.EditReference);
+	if(editReference!=null && !editReference.isEmpty()){
+		// We have a previous stored GalleryInstance
+		galleryInstance = galleryService.getGalleryInstanceByEditReference(editReference);
+	}
+	else{
+		// Create a new GalleryInstance, and get the Key
+		galleryInstance = galleryService.createNewGalleryInstance(request);
+	}
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,7 +49,7 @@
 			<div class="import">
 				<div class="import-upload">
 					<form id="uploadForm"
-						action="<%= blobstoreService.createUploadUrl("/upload") %>"
+						action="<%= blobstoreService.createUploadUrl("/upload?editReference="+editReference) %>"
 						method="post" enctype="multipart/form-data">
 						<input type="text" name="foo"> <input type="file"
 							name="myFile"> <input type="submit" value="Submit">
@@ -103,13 +121,11 @@
 			function GetImages(){
 				$.getJSON("images",
 						  function(data) {
-						    $.each(data.items, function(i,item){
-						      $("<img/>").attr("src", item.media.m).appendTo("#images");
-						      if ( i == 3 ) return false;
-						    });
-						  });
-
-				}
+					  $.each(data, function(i,item){
+					      $("<img/>").attr("src", item.servingUrl).appendTo("#images");
+					  });
+				});
+			}
 
             // Loads correct gallery and populates it with images from #images div
             function ChooseGallery() {

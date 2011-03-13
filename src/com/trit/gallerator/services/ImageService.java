@@ -18,10 +18,10 @@ public class ImageService extends ServerResource
 	{
 		List<JSONObject> test = new ArrayList<JSONObject>();
 		ImageData imageData = new ImageData();
-		imageData.setServingUrl("test");
+		imageData.setServingUrl("http://farm6.static.flickr.com/5211/5515072779_54c76f4279_m.jpg");
 		test.add(new JSONObject(imageData));
 		JSONArray array = new JSONArray(test);
-
+		
 		return array.toString();
 
 	}

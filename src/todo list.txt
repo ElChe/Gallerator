@@ -1,0 +1,13 @@
+serve images through a handler to be able to authenticate with itsl_auth and not misuse
+itsl_auth 
+Create a page for unauthorized access (not via itslearning)
+Create a request items helper to get all items from request
+Restrict number of images uploaded
+Cleanup javascript, put in separate file
+Get images from restapi, calling the datastore
+Secure the restapi
+Prioritize this list :)
+Fix design and css
+
+Later:
+create a paid version

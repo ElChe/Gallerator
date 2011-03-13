@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="play.Play"/>
+<fullyQualifiedTypeName name="com.google.appengine.api.blobstore.BlobstoreService"/>
+<fullyQualifiedTypeName name="com.google.appengine.api.blobstore.BlobstoreServiceFactory"/>
 </qualifiedTypeNameHistroy>
