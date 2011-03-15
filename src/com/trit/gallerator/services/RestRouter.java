@@ -9,7 +9,7 @@ import com.trit.gallerator.web.utils.RequestHelper;
 public class RestRouter extends Application
 {
 	/**
-	 * Creates a root Restlet that will receive all incoming calls.
+	 * Creates a root Restlet that will receive all incoming calls to /images path
 	 */
 	@Override
 	public Restlet createInboundRoot()
@@ -18,8 +18,8 @@ public class RestRouter extends Application
 		// new instance of ImageService.
 		Router router = new Router(getContext());
 
-		// Defines only one route
-		router.attach(String.format("/images/{%s}", RequestHelper.EditReference), ImageService.class);
+		// Defines only one route "/images/%s
+		router.attach(String.format("/{%s}", RequestHelper.EditReference), ImageService.class);
 
 		return router;
 	}

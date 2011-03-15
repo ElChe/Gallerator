@@ -19,7 +19,6 @@ import com.google.appengine.api.datastore.Key;
 public class GalleryInstance {
 
 	// Generate this for new, use in EditReference to lookup existing instances.
-	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	@PrimaryKey
 	private Key key;
 	
@@ -27,6 +26,8 @@ public class GalleryInstance {
 	@Persistent
 	private List<ImageData> images = new ArrayList<ImageData>();
 	
+	@Persistent
+	private UserInfo user;
 	/**
 	 * Returns editReference for use on the post
 	 * @return
@@ -61,5 +62,15 @@ public class GalleryInstance {
 	 */
 	public Key getKey() {
 		return key;
+	}
+
+	public void setUser(UserInfo user)
+	{
+		this.user = user;
+	}
+
+	public UserInfo getUser()
+	{
+		return user;
 	}
 }

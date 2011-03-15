@@ -8,6 +8,7 @@ Get images from restapi, calling the datastore
 Secure the restapi
 Prioritize this list :)
 Fix design and css
+Use a more fancy uploader - plupload or oters?
 
 Later:
 create a paid version

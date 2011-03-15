@@ -1,31 +1,15 @@
-<%@page import="com.trit.gallerator.data.GalleryInstance"%>
-<%@page import="com.trit.gallerator.services.GalleryServiceImpl"%>
 <%@page import="com.trit.gallerator.web.utils.RequestHelper"%>
+<%@page import="com.trit.gallerator.services.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%@ page
-	import="com.google.appengine.api.blobstore.BlobstoreServiceFactory"%>
-<%@ page import="com.google.appengine.api.blobstore.BlobstoreService"%>
-
 <%
-    final BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-	
- 	// TODO put this somewhere else, and send request as input
  	// TODO security
  	// TODO Session handling/user
-	GalleryServiceImpl galleryService = new GalleryServiceImpl();
-	GalleryInstance galleryInstance;
-	String editReference = request.getParameter(RequestHelper.EditReference);
-	if(editReference!=null && !editReference.isEmpty()){
-		// We have a previous stored GalleryInstance
-		galleryInstance = galleryService.getGalleryInstanceByEditReference(editReference);
-	}
-	else{
-		// Create a new GalleryInstance, and get the Key
-		galleryInstance = galleryService.createNewGalleryInstance(request);
-	}
-	request.getSession().setAttribute(RequestHelper.EditReference, galleryInstance.GetEditReference());
+	GalleryService galleryService = new GalleryServiceImpl();
+	galleryService.InitializeSession(request);
+	
+	String editReference = (String) request.getSession().getAttribute(RequestHelper.EditReference);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -50,13 +34,14 @@
 			<div class="import">
 				<div class="import-upload">
 					<form id="uploadForm"
-						action="<%= blobstoreService.createUploadUrl("/upload?editReference="+editReference) %>"
+						action="nop"
 						method="post" enctype="multipart/form-data">
 						<input type="text" name="foo"> <input type="file"
 							name="myFile"> <input type="submit" value="Submit">
 					</form>
 				</div>
 			</div>
+			<input type="hidden" id="editReferenceHidden" value="<%= editReference %>" />
 			<!-- change this to bind the onchange in jquery -->
 			<div>
 				<label for="gallerySelector">Choose a gallery to use:&nbsp;</label>
@@ -68,7 +53,7 @@
 				</select>
 			</div>
 			<div id="images" style="display: none;" class="">
-				<img alt="" class="originals"
+				<!-- <img alt="" class="originals"
 					src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Basket_of_strawberries_red_accent.jpg/500px-Basket_of_strawberries_red_accent.jpg" />
 				<img alt="" class="originals"
 					src="http://upload.wikimedia.org/wikipedia/commons/2/2d/Ns1-unsharp.jpg" />
@@ -86,7 +71,8 @@
 					src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Smoky_forest.jpg/500px-Smoky_forest.jpg" />
 				<img alt="" class="originals"
 					src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Alcea_rosea_and_blue_sky.jpg/500px-Alcea_rosea_and_blue_sky.jpg" />
-			</div>
+ -->
+ 			</div>
 			<div id="imageView"
 				style="height: 400px; width: 800px; position: relative;"
 				class="images"></div>
@@ -97,7 +83,10 @@
 
         jQuery(document).ready(function ($) {
             AjaxifyForm();
-
+            GetNewUploadUrl();
+			
+            GetImages($('#editReferenceHidden').val());
+            
             $('#gallerySelector').bind('change', ChooseGallery);
             $('#htmlGeneratorButton').bind('click', GenerateIframeContent);
             ChooseGallery();
@@ -113,19 +102,32 @@
             	// prepare Options Object 
             	var options = {  
             	    success:    function() { 
-            	    	GetImages(); 
+                	    GetNewUploadUrl();
+            	    	GetImages($('#editReferenceHidden').val()); 
+            	    	ChooseGallery();
             	    } 
             	}; 
             	$('#uploadForm').ajaxForm(options);
             }
 
-			function GetImages(){
-				$.getJSON("images",
+			function GetImages(editReference){
+				$.getJSON("images/"+editReference,
 						  function(data) {
+					  var imageHolder = $("#images").empty();
 					  $.each(data, function(i,item){
-					      $("<img/>").attr("src", item.servingUrl).appendTo("#images");
+					      $("<img/>").attr("src", item.servingUrl).appendTo(imageHolder);
 					  });
 				});
+			}
+
+			function GetNewUploadUrl(){
+				$.ajax({
+		            url: '/genUploadUrl',
+		            async: false,
+		            success: function(data) {
+		              $('#uploadForm').attr('action', data);
+		            }}
+	            );
 			}
 
             // Loads correct gallery and populates it with images from #images div

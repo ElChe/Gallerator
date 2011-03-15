@@ -1,17 +1,32 @@
 package com.trit.gallerator.data;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+
+import com.google.appengine.api.datastore.Key;
+
 /**
  * POJO describing a user
  * Is unique by combination of customerId+personId
  * @author Amund
  *
  */
+@PersistenceCapable
 public class UserInfo
 {
+	// Generate this for new by personId_customerId
+	@PrimaryKey
+	private Key key;
+	@Persistent
 	private int personId;
+	@Persistent
 	private int customerId;
+	@Persistent
 	private String country;
+	@Persistent
 	private int educationLevel;
+	@Persistent
 	private String language;
 	
 	public int getEducationLevel()
@@ -53,5 +68,13 @@ public class UserInfo
 	public String getLanguage()
 	{
 		return language;
+	}
+	public void setKey(Key key)
+	{
+		this.key = key;
+	}
+	public Key getKey()
+	{
+		return key;
 	}
 }

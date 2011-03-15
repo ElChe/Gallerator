@@ -9,6 +9,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 		<servlet-class>com.trit.gallerator.servlet.Upload</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>GenUploadUrl</servlet-name>
+		<servlet-class>com.trit.gallerator.servlet.GenUploadUrl</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>RestletServlet</servlet-name>
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
@@ -20,6 +24,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	<servlet-mapping>
 		<servlet-name>Upload</servlet-name>
 		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GenUploadUrl</servlet-name>
+		<url-pattern>/genUploadUrl</url-pattern>
 	</servlet-mapping>
 	<!-- Catch all requests -->
 	<servlet-mapping>
